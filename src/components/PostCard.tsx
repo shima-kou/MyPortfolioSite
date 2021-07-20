@@ -285,17 +285,3 @@ export const StaticAvatar = css`
     border-color: ${lighten('0.02', colors.darkgrey)};
   }
 `;
-
-export const AuthorProfileImage = css`
-  display: block;
-  width: 100%;
-  height: 100%;
-  /* background: color(var(--lightgrey) l(+10%)); */
-  background: ${lighten('0.1', colors.lightgrey)};
-  border-radius: 100%;
-  object-fit: cover;
-
-  @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
-  }
-`;

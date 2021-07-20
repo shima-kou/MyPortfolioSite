@@ -2,9 +2,7 @@ import { graphql, Link, StaticQuery } from 'gatsby';
 import React from 'react';
 import { css } from '@emotion/react';
 import { FixedObject } from 'gatsby-image';
-
 import config from '../../website-config';
-
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 interface SiteNavLogoProps {

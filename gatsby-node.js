@@ -5,11 +5,6 @@ const _ = require('lodash');
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  // Sometimes, optional fields tend to get not picked up by the GraphQL
-  // interpreter if not a single content uses it. Therefore, we're putting them
-  // through `createNodeField` so that the fields still exist and GraphQL won't
-  // trip up. An empty string is still required in replacement to `null`.
-  // eslint-disable-next-line default-case
   switch (node.internal.type) {
     case 'MarkdownRemark': {
       const { permalink, layout, primaryTag } = node.frontmatter;
@@ -74,23 +69,6 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
               }
-              author {
-                id
-                bio
-                avatar {
-                  children {
-                    ... on ImageSharp {
-                      fluid(quality: 100) {
-                        aspectRatio
-                        base64
-                        sizes
-                        src
-                        srcSet
-                      }
-                    }
-                  }
-                }
-              }
             }
             fields {
               readingTime {
@@ -99,13 +77,6 @@ exports.createPages = async ({ graphql, actions }) => {
               layout
               slug
             }
-          }
-        }
-      }
-      allAuthorYaml {
-        edges {
-          node {
-            id
           }
         }
       }
@@ -180,18 +151,6 @@ exports.createPages = async ({ graphql, actions }) => {
       component: tagTemplate,
       context: {
         tag,
-      },
-    });
-  });
-
-  // Create author pages
-  const authorTemplate = path.resolve('./src/templates/author.tsx');
-  result.data.allAuthorYaml.edges.forEach(edge => {
-    createPage({
-      path: `/author/${_.kebabCase(edge.node.id)}/`,
-      component: authorTemplate,
-      context: {
-        author: edge.node.id,
       },
     });
   });

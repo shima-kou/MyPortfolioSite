@@ -252,7 +252,6 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
 
   .site-header-content {
     padding: 5vw 0 10px;
-    /* border-bottom: 1px solid color(var(--lightgrey) l(+12%)); */
     border-bottom: 1px solid ${lighten('0.12', colors.lightgrey)};
   }
 
@@ -311,12 +310,9 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
   }
   @media (prefers-color-scheme: dark) {
     color: rgba(255, 255, 255, 0.9);
-    /* background: var(--darkmode); */
     background: ${colors.darkmode};
 
     .site-header-content {
-      /* border-bottom-color: color(var(--darkmode) l(+15%)); */
-      /* border-bottom-color: ${lighten('0.15', colors.darkmode)}; */
       border-bottom-color: #272a30;
     }
 
@@ -345,7 +341,6 @@ export const NoImage = css`
 
   .no-image .site-header-content {
     padding: 5vw 0 10px;
-    /* border-bottom: 1px solid color(var(--lightgrey) l(+12%)); */
     border-bottom: 1px solid ${lighten('0.12', colors.lightgrey)};
   }
 
@@ -397,12 +392,10 @@ export const NoImage = css`
   @media (prefers-color-scheme: dark) {
     .no-image {
       color: rgba(255, 255, 255, 0.9);
-      /* background: var(--darkmode); */
       background: ${colors.darkmode};
     }
 
     .no-image .site-header-content {
-      /* border-bottom-color: color(var(--darkmode) l(+15%)); */
       border-bottom-color: ${lighten('0.15', colors.darkmode)};
     }
 

@@ -21,16 +21,11 @@ export const Footer: React.FC = () => {
           &copy; {new Date().getFullYear()}{' '}
           {config.footer && (
             <AniLink cover direction="left" duration={1.2} to="/">
-              | {config.title} {config.footer}
+              {config.title} {config.footer}
             </AniLink>
           )}
         </section>
         <SiteFooterNav>
-          {config.facebook && (
-            <a href={config.facebook} target="_blank" rel="noopener noreferrer">
-              Facebook
-            </a>
-          )}
           {config.twitter && (
             <a href={config.twitter} target="_blank" rel="noopener noreferrer">
               Twitter
