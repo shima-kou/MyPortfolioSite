@@ -27,9 +27,16 @@ export const SiteNavMain = css`
   background: ${lighten('-0.05', colors.darkgrey)};
 `;
 
+export const ProfileMain = css`
+  color: ${colors.darkgrey};
+  flex-grow: 1;
+  background: ${lighten('-0.05', colors.yellow)};
+  padding: 20px 5vw;
+  position: relative;
+`;
+
 export const SiteMain = css`
   flex-grow: 1;
-
   @media (prefers-color-scheme: dark) {
     background: ${colors.darkmode};
   }
@@ -54,9 +61,9 @@ export const SiteDescription = styled.h2`
   padding: 5px 0;
   font-size: 2.1rem;
   line-height: 1.4em;
-  font-weight: 400;
+  font-weight: 500;
   opacity: 0.8;
-
+  color: ${colors.darkgrey};
   @media (max-width: 500px) {
     font-size: 1.8rem;
   }
@@ -128,17 +135,18 @@ export const SiteHeaderStyles = css`
   background: ${lighten('-0.05', colors.darkgrey)} no-repeat center center;
   background-size: cover;
 
-  :before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    display: block;
-    background: rgba(0, 0, 0, 0.18);
-  }
+  // :before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   z-index: 10;
+  //   display: block;
+  //   background: rgba(0, 0, 0, 0.18);
+  // }
+
   :after {
     content: '';
     position: absolute;

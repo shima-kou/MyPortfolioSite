@@ -165,7 +165,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         <header className="site-header">
           <div css={[outer, SiteNavMain]}>
             <div css={inner}>
-              <SiteNav isPost post={post.frontmatter} />
+              <SiteNav isPost />
             </div>
           </div>
         </header>

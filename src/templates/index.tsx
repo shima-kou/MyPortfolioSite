@@ -7,6 +7,7 @@ import { css } from '@emotion/react';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
+import SkillCard from '../components/SkillCard';
 import Pagination from '../components/Pagination';
 import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
@@ -20,11 +21,11 @@ import {
   SiteHeader,
   SiteHeaderContent,
   SiteMain,
-  SiteTitle,
   SiteHeaderStyles,
 } from '../styles/shared';
 import config from '../website-config';
 import { PageContext } from './post';
+import { colors } from '../styles/colors';
 
 export interface IndexProps {
   pageContext: {
@@ -94,41 +95,35 @@ const IndexPage: React.FC<IndexProps> = props => {
           css={[outer, SiteHeader, SiteHeaderStyles]}
           className="site-header-background"
           style={{
-            backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
+            background: colors.yellow,
           }}
         >
           <div css={inner}>
             <SiteNav isHome />
             <SiteHeaderContent className="site-header-content">
-              <SiteTitle className="site-title">
-                {props.data.logo ? (
-                  <img
-                    style={{ maxHeight: '55px' }}
-                    src={props.data.logo.childImageSharp.fixed.src}
-                    alt={config.title}
-                  />
-                ) : (
-                  config.title
-                )}
-              </SiteTitle>
+              <h1 css={[MainTitle]}>{config.title}</h1>
+              <p>Web Engineer</p>
               <SiteDescription>{config.description}</SiteDescription>
             </SiteHeaderContent>
           </div>
         </div>
-        <main id="site-main" css={[SiteMain, outer]}>
-          <div css={[inner, Posts]}>
-            <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges.map((post, index) => {
-                // filter out drafts in production
-                return (
-                  (post.node.frontmatter.draft !== true ||
-                    process.env.NODE_ENV !== 'production') && (
-                    <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
-                  )
-                );
-              })}
+        <main id="site-main">
+          <div className="site-container" css={[SiteMain, outer]}>
+            <div css={[inner, Posts]}>
+              <div css={[PostFeed]}>
+                {props.data.allMarkdownRemark.edges.map((post, index) => {
+                  // filter out drafts in production
+                  return (
+                    (post.node.frontmatter.draft !== true ||
+                      process.env.NODE_ENV !== 'production') && (
+                      <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
+                    )
+                  );
+                })}
+              </div>
             </div>
           </div>
+          <SkillCard />
         </main>
         {props.children}
         {props.pageContext.numPages > 1 && (
@@ -196,6 +191,15 @@ export const pageQuery = graphql`
         }
       }
     }
+  }
+`;
+
+const MainTitle = css`
+  color: ${colors.darkgrey};
+  margin: 0 0 10px;
+  & + p {
+    font-weight: 600;
+    color: ${colors.darkgrey};
   }
 `;
 

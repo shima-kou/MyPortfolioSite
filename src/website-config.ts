@@ -16,9 +16,8 @@ export interface WebsiteConfig {
 }
 
 const config: WebsiteConfig = {
-  title: 'フカンゼン',
-  description:
-    'フロントエンドとたまにバックエンドをやる雑多エンジニアのブログです。趣味の話もたまにします。',
+  title: 'K.S Daily Coding',
+  description: 'フロントエンドとバックエンド、たまにデザインをやる雑多エンジニアのブログです。',
   coverImage: 'img/blog-cover.png',
   logo: 'img/logo.svg',
   lang: 'ja',
