@@ -108,10 +108,13 @@ const SkillCardColumn = css`
     @media (max-width: 767px) {
       padding: 5px 10px 10px;
     }
-    h2 {
+    h3 {
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: 700;
       color: ${colors.whitegrey};
       border-bottom: 1px solid ${colors.whitegrey};
-      padding: 25px 0 10px;
+      padding: 25px 0 14px;
       margin: 0;
       @media (max-width: 767px) {
         padding: 0 0 10px;

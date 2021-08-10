@@ -4,6 +4,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/react';
+import { colors } from '../styles/colors';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
@@ -22,10 +23,10 @@ import {
   SiteHeaderContent,
   SiteMain,
   SiteHeaderStyles,
+  ResponsiveHeaderBackground,
 } from '../styles/shared';
 import config from '../website-config';
 import { PageContext } from './post';
-import { colors } from '../styles/colors';
 
 export interface IndexProps {
   pageContext: {
@@ -39,6 +40,11 @@ export interface IndexProps {
       };
     };
     header: {
+      childImageSharp: {
+        fixed: FixedObject;
+      };
+    };
+    siteTopCover: {
       childImageSharp: {
         fixed: FixedObject;
       };
@@ -96,14 +102,23 @@ const IndexPage: React.FC<IndexProps> = props => {
           className="site-header-background"
           style={{
             background: colors.yellow,
+            backgroundImage: `url('${props.data.siteTopCover.childImageSharp.fixed.src}')`,
           }}
         >
-          <div css={inner}>
+          <div
+            css={inner}
+            style={{
+              position: 'relative',
+              zIndex: '50',
+            }}
+          >
             <SiteNav isHome />
-            <SiteHeaderContent className="site-header-content">
+            <SiteHeaderContent className="site-header-content" css={[ResponsiveHeaderBackground]}>
               <h1 css={[MainTitle]}>{config.title}</h1>
               <p>Web Engineer</p>
-              <SiteDescription>{config.description}</SiteDescription>
+              <SiteDescription style={{ color: colors.whitegrey, opacity: '1' }}>
+                {config.description}
+              </SiteDescription>
             </SiteHeaderContent>
           </div>
         </div>
@@ -158,6 +173,15 @@ export const pageQuery = graphql`
         }
       }
     }
+    siteTopCover: file(relativePath: { eq: "img/hnck7801.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
@@ -195,11 +219,11 @@ export const pageQuery = graphql`
 `;
 
 const MainTitle = css`
-  color: ${colors.darkgrey};
+  color: ${colors.yellow};
   margin: 0 0 10px;
   & + p {
-    font-weight: 600;
-    color: ${colors.darkgrey};
+    font-weight: 700;
+    color: ${colors.whitegrey};
   }
 `;
 
