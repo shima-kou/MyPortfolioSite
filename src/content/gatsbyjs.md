@@ -1,7 +1,7 @@
 ---
 title: 'GatsbyJSで手軽にページ遷移アニメーションを実装する'
 tags: [GatsbyJS]
-image: img/soucecodeIMGL9025_TP_V.jpeg
+image: img/soucecodeIMGL9025_TP_V.jpg
 date: '2021-08-11T10:00:00.000Z'
 draft: false
 excerpt: Gatsby や React でページ遷移アニメーションを行うには様々なプラグインなどもありますが、今回はその中でも比較的簡単に実装できる Gatsby Plugin Transition Link のプラグインの使い方について備忘録です。
