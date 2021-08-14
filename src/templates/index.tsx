@@ -239,7 +239,7 @@ const HomePosts = css`
 
     .post-card-large .post-card-title {
       margin-top: 0;
-      font-size: 3.2rem;
+      font-size: 2.4rem;
     }
 
     .post-card-large:not(.no-image) .post-card-header {
@@ -262,11 +262,42 @@ const HomePosts = css`
     .post-card-large .post-card-content {
       flex: 0 1 361px;
       justify-content: center;
+
+      a {
+        h2 {
+          transition: 0.3s ease;
+        }
+        p {
+          transition: 0.3s ease;
+        }
+        .post-card-meta {
+          transition: 0.3s ease;
+        }
+        &:hover {
+          h2 {
+            color: #39a0ed;
+            transition: 0.3s ease;
+          }
+          p {
+            color: #39a0ed;
+            transition: 0.3s ease;
+          }
+        }
+      }
+      .post-card-primary-tag {
+        a {
+          transition: 0.3s ease;
+          &:hover + .post-card-meta {
+            opacity: 0.6;
+            transition: 0.3s ease;
+          }
+        }
+      }
     }
 
     .post-card-large .post-card-title {
       margin-top: 0;
-      font-size: 3.2rem;
+      font-size: 2.4rem;
     }
 
     .post-card-large .post-card-content-link {
@@ -281,6 +312,15 @@ const HomePosts = css`
       margin-bottom: 1.5em;
       font-size: 1.8rem;
       line-height: 1.5em;
+    }
+  }
+
+  a {
+    transition: 0.3s ease;
+    &:hover {
+      text-decoration: none;
+      color: #39a0ed;
+      transition: 0.3s ease;
     }
   }
 `;

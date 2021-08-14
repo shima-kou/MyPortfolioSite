@@ -27,15 +27,10 @@ export const SiteNavLogo = () => (
       }
     `}
     render={(data: SiteNavLogoProps) => (
-      <AniLink
-        cover
-        direction="left"
-        duration={1.2}
-        className="site-nav-logo"
-        css={SiteNavLogoStyles}
-        to="/"
-      >
-        {config.title}
+      <AniLink cover duration={1.2} to="/" bg="#ffcb37">
+        <p className="site-nav-logo" css={SiteNavLogoStyles}>
+          {config.title}
+        </p>
       </AniLink>
     )}
   />

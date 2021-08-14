@@ -114,4 +114,12 @@ const ReadNextFeed = styled.div`
   flex-wrap: wrap;
   margin: 0 -25px;
   padding: 60px 0 0 0;
+  a {
+    transition: 0.3s ease;
+    &:hover {
+      text-decoration: none;
+      color: #39a0ed;
+      transition: 0.3s ease;
+    }
+  }
 `;

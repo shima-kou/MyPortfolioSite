@@ -31,42 +31,30 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
       css={[PostCardStyles, large && PostCardLarge]}
     >
       {post.frontmatter.image && (
-        <AniLink
-          cover
-          direction="left"
-          duration={1.2}
-          bg="#191b1f"
-          className="post-card-image-link"
-          css={PostCardImageLink}
-          to={post.fields.slug}
-        >
-          <PostCardImage className="post-card-image">
-            {post.frontmatter?.image?.childImageSharp?.fluid && (
-              <Img
-                alt={`${post.frontmatter.title} cover image`}
-                style={{ height: '100%' }}
-                fluid={post.frontmatter.image.childImageSharp.fluid}
-              />
-            )}
-          </PostCardImage>
-        </AniLink>
+        <div className="post-card-image-link">
+          <AniLink cover duration={1.2} bg="#ffcb37" to={post.fields.slug}>
+            <PostCardImage className="post-card-image">
+              {post.frontmatter?.image?.childImageSharp?.fluid && (
+                <Img
+                  alt={`${post.frontmatter.title} cover image`}
+                  style={{ height: '100%' }}
+                  fluid={post.frontmatter.image.childImageSharp.fluid}
+                />
+              )}
+            </PostCardImage>
+          </AniLink>
+        </div>
       )}
       <PostCardContent className="post-card-content">
-        <AniLink
-          cover
-          direction="left"
-          duration={1.2}
-          bg="#191b1f"
-          className="post-card-content-link"
-          css={PostCardContentLink}
-          to={post.fields.slug}
-        >
-          <PostCardHeader className="post-card-header">
-            <PostCardTitle className="post-card-title">{post.frontmatter.title}</PostCardTitle>
-          </PostCardHeader>
-          <PostCardExcerpt className="post-card-excerpt">
-            <p>{post.frontmatter.excerpt || post.excerpt}</p>
-          </PostCardExcerpt>
+        <AniLink cover duration={1.2} bg="#ffcb37" to={post.fields.slug}>
+          <div className="post-card-content-link" css={PostCardContentLink}>
+            <PostCardHeader className="post-card-header">
+              <PostCardTitle className="post-card-title">{post.frontmatter.title}</PostCardTitle>
+            </PostCardHeader>
+            <PostCardExcerpt className="post-card-excerpt">
+              <p>{post.frontmatter.excerpt || post.excerpt}</p>
+            </PostCardExcerpt>
+          </div>
         </AniLink>
         <PostCardMeta className="post-card-meta">
           <PostCardBylineContent className="post-card-byline-content">
@@ -76,9 +64,8 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
                 <PostCardPrimaryTag className="post-card-primary-tag">
                   <AniLink
                     cover
-                    direction="left"
                     duration={1.2}
-                    bg="#191b1f"
+                    bg="#ffcb37"
                     to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}
                   >
                     {post.frontmatter.tags[0]}
@@ -137,7 +124,8 @@ const PostCardLarge = css`
 
     .post-card-title {
       margin-top: 0;
-      font-size: 3.2rem;
+      font-size: 2.4rem;
+      line-height: 1.35;
       font-weight: 700;
     }
 
@@ -151,7 +139,7 @@ const PostCardLarge = css`
 
     .post-card-excerpt p {
       margin-bottom: 1.5em;
-      font-size: 1.8rem;
+      font-size: 1rem;
       line-height: 1.5em;
     }
   }

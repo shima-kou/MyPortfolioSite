@@ -56,7 +56,6 @@ interface TagTemplateProps {
 const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
   const tag = pageContext.tag ? pageContext.tag : '';
   const { edges, totalCount } = data.allMarkdownRemark;
-  const tagData = data.allTagYaml.edges.find(n => n.node.id.toLowerCase() === tag.toLowerCase());
 
   return (
     <IndexLayout>
@@ -65,7 +64,7 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
         <title>
           {tag} - {config.title}
         </title>
-        <meta name="description" content={tagData?.node ? tagData.node.description : ''} />
+        <meta name="description" content={''} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={`${tag} - ${config.title}`} />
@@ -87,23 +86,17 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
               <SiteNav isHome={false} />
             </div>
           </div>
-          <ResponsiveHeaderBackground
-            css={[outer, SiteHeaderBackground]}
-            backgroundImage={tagData?.node?.image?.childImageSharp?.fluid?.src}
-            className="site-header-background"
-          >
+          <ResponsiveHeaderBackground css={[outer, SiteHeaderBackground]}>
             <SiteHeaderContent css={inner} className="site-header-content">
               <SiteTitle className="site-title">{tag}</SiteTitle>
               <SiteDescription className="site-description">
-                {tagData?.node.description ? (
-                  tagData.node.description
-                ) : (
+                {
                   <>
                     A collection of {totalCount > 1 && `${totalCount} posts`}
                     {totalCount === 1 && '1 post'}
                     {totalCount === 0 && 'No posts'}
                   </>
-                )}
+                }
               </SiteDescription>
             </SiteHeaderContent>
           </ResponsiveHeaderBackground>
@@ -127,21 +120,6 @@ export default Tags;
 
 export const pageQuery = graphql`
   query ($tag: String) {
-    allTagYaml {
-      edges {
-        node {
-          id
-          description
-          image {
-            childImageSharp {
-              fluid(maxWidth: 3720) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

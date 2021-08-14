@@ -1,25 +1,19 @@
 ---
 layout: post
-title: 'Welcome to Ghost'
-tags: ['Getting Started']
-image: img/welcome-to-ghost.jpg
-date: '2018-05-06T23:46:37.121Z'
+title: '自己学習のアウトプット用のブログを始めました'
+tags: ['Other']
+image: img/computer.jpg
+date: '2021-08-10T10:00:00.000Z'
 draft: false
-excerpt: Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time.
+excerpt: アウトプットするためのブログが欲しいなと思っていたのでブログサイトを開設いたしました。
 ---
 
-**A few things you should know upfront**:
+### フレームワークには GatsbyJS を使い制作いたしました。
 
-1. Ghost is designed for ambitious, professional publishers who want to actively build a business around their content. That's who it works best for.
-2. The entire platform can be modified and customised to suit your needs. It's very powerful, but does require some knowledge of code. Ghost is not necessarily a good platform for beginners or people who just want a simple personal blog.
-3. For the best experience we recommend downloading the Ghost Desktop App for your computer, which is the best way to access your Ghost site on a desktop device.
+<br />
+今回、本ブログサイトを制作するにあたり、React での制作経験がなかったため本ブログサイトの制作に ReactJS のフレームワークである GatsbyJS を採用しました。
+<br /><br />
 
-Ghost is made by an independent non-profit organisation called the Ghost Foundation. We are 100% self funded by revenue from our Ghost(Pro) service, and every penny we make is re-invested into funding further development of free, open source technology for modern publishing.
+**Github**: https://github.com/shima-kou/gatsbySite
 
-The version of Ghost you are looking at right now would not have been made possible without generous contributions from the open source community.
-
-## Next up, the editor
-
-The main thing you'll want to read about next is probably: the Ghost editor. This is where the good stuff happens.
-
-> By the way, once you're done reading, you can simply delete the default **Ghost** user from your team to remove all of these introductory posts!
+まだまだ色々改善したい箇所があるため今後も定期的にレイアウトの変更や機能の追加を行なっていくと思います。

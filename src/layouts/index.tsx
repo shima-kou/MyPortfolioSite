@@ -105,7 +105,8 @@ const IndexLayout: React.FC<IndexProps> = props => {
             vertical-align: baseline;
           }
           body {
-            line-height: 1;
+            font-size: 16px;
+            line-height: 1.5;
           }
           ol,
           ul {
@@ -423,14 +424,14 @@ const IndexLayout: React.FC<IndexProps> = props => {
           h5,
           h6 {
             margin-top: 0;
-            line-height: 1.15;
+            line-height: 1.35;
             font-weight: 600;
             text-rendering: optimizeLegibility;
           }
 
           h1 {
             margin: 0 0 0.5em 0;
-            font-size: 5.5rem;
+            font-size: 4.2rem;
             font-weight: 600;
           }
           @media (max-width: 500px) {
