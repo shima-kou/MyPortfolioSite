@@ -3,9 +3,9 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Casper',
-    description: 'A port of the casper blog built for gatsby',
-    siteUrl: 'https://gatsby-casper.netlify.com', // full path to blog - no ending slash
+    title: 'K.S Daily Coding',
+    description: 'フロントエンドとバックエンド、たまにデザインをやる雑多エンジニアのブログです。',
+    siteUrl: 'https://kakonaru-portfolio.netlify.app',
   },
   mapping: {},
   plugins: [
