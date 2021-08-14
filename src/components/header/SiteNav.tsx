@@ -94,7 +94,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                   <AniLink
                     cover
                     direction="left"
-                    duration={1.2}
+                    duration={0.6}
                     bg="#ffcb37"
                     to="/"
                     activeClassName="nav-current"
@@ -106,7 +106,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                   <AniLink
                     cover
                     direction="left"
-                    duration={1.2}
+                    duration={0.6}
                     bg="#ffcb37"
                     to="/about"
                     activeClassName="nav-current"
@@ -118,7 +118,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                   <AniLink
                     cover
                     direction="left"
-                    duration={1.2}
+                    duration={0.6}
                     bg="#ffcb37"
                     to="/contact"
                     activeClassName="nav-current"

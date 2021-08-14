@@ -68,9 +68,9 @@ const About: React.FC = () => (
             <PostFullContent className="post-full-content">
               <div className="post-content">
                 <h2>
-                  在籍中の企業で現在メインとして扱っている技術と自身がよりスキルアップしたいと考えているスキルに相違が出てきたため。
+                  自身のスキルアップのしたい方向性と近い方向を目指すために現在転職活動中です。
                   <br />
-                  より、自身のスキルアップのしたい方向性と近い方向を目指すために現在転職活動中です。
+                  日々の学習内容や詰まった点のメモ用でもあります。
                 </h2>
               </div>
             </PostFullContent>

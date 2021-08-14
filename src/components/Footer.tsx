@@ -15,12 +15,12 @@ export const Footer: React.FC = () => {
     <footer css={[outer, SiteFooter]}>
       <div css={[inner, SiteFooterContent]}>
         <section className="copyright">
-          <AniLink cover direction="left" duration={1.2} to="/">
+          <AniLink cover direction="left" duration={0.6} to="/">
             {config.title}
           </AniLink>{' '}
           &copy; {new Date().getFullYear()}{' '}
           {config.footer && (
-            <AniLink cover direction="left" duration={1.2} to="/">
+            <AniLink cover direction="left" duration={0.6} to="/">
               {config.title} {config.footer}
             </AniLink>
           )}

@@ -21,13 +21,13 @@ const config: WebsiteConfig = {
   coverImage: 'img/blog-cover.png',
   logo: 'img/logo.svg',
   lang: 'ja',
-  siteUrl: '',
+  siteUrl: 'https://kakonaru-portfolio.netlify.app',
   twitter: 'https://twitter.com/kakona_ru',
   showSubscribe: false,
   mailchimpAction: '',
   mailchimpName: '',
   mailchimpEmailFieldName: '',
-  googleSiteVerification: '',
+  googleSiteVerification: '_MyRMJuHHGlg7fdta-XBcsfvSjpycr0ysCwayirb8jI',
   footer: 'All rights reserved.',
 };
 

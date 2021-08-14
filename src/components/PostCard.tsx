@@ -32,7 +32,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
     >
       {post.frontmatter.image && (
         <div className="post-card-image-link">
-          <AniLink cover duration={1.2} bg="#ffcb37" to={post.fields.slug}>
+          <AniLink cover duration={0.6} bg="#ffcb37" to={post.fields.slug}>
             <PostCardImage className="post-card-image">
               {post.frontmatter?.image?.childImageSharp?.fluid && (
                 <Img
@@ -46,7 +46,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
         </div>
       )}
       <PostCardContent className="post-card-content">
-        <AniLink cover duration={1.2} bg="#ffcb37" to={post.fields.slug}>
+        <AniLink cover duration={0.6} bg="#ffcb37" to={post.fields.slug}>
           <div className="post-card-content-link" css={PostCardContentLink}>
             <PostCardHeader className="post-card-header">
               <PostCardTitle className="post-card-title">{post.frontmatter.title}</PostCardTitle>
@@ -64,7 +64,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
                 <PostCardPrimaryTag className="post-card-primary-tag">
                   <AniLink
                     cover
-                    duration={1.2}
+                    duration={0.6}
                     bg="#ffcb37"
                     to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}
                   >

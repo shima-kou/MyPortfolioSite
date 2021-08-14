@@ -27,7 +27,7 @@ export const SiteNavLogo = () => (
       }
     `}
     render={(data: SiteNavLogoProps) => (
-      <AniLink cover duration={1.2} to="/" bg="#ffcb37">
+      <AniLink cover duration={0.6} to="/" bg="#ffcb37">
         <p className="site-nav-logo" css={SiteNavLogoStyles}>
           {config.title}
         </p>
