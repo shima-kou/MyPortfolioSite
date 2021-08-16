@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import RehypeReact from 'rehype-react';
 
 import { colors } from '../styles/colors';
+import { fontSize } from '../styles/fontSize';
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
@@ -34,8 +35,6 @@ export const PostFullContent = styled.section`
   margin: 0 auto;
   padding: 0 170px 6vw;
   min-height: 230px;
-  font-family: Georgia, serif;
-  font-size: 2rem;
   line-height: 1.6em;
   background: #fff;
 
@@ -44,14 +43,12 @@ export const PostFullContent = styled.section`
   }
   @media (max-width: 800px) {
     padding: 0 5vw;
-    font-size: 1.8rem;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     padding: 0;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     .post-full-custom-excerpt {
-      font-size: 1.9rem;
       line-height: 1.5em;
     }
   }
@@ -77,7 +74,7 @@ export const PostFullContent = styled.section`
     margin: 0 0 1.5em 0;
     min-width: 100%;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     p,
     ul,
     ol,
@@ -160,7 +157,7 @@ export const PostFullContent = styled.section`
     padding: 0 1.5em;
     border-left: #3eb0ef 3px solid;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     blockquote {
       padding: 0 1.3em;
     }
@@ -169,7 +166,6 @@ export const PostFullContent = styled.section`
   blockquote p {
     margin: 0 0 1em 0;
     color: inherit;
-    font-size: inherit;
     line-height: inherit;
     font-style: italic;
   }
@@ -180,7 +176,6 @@ export const PostFullContent = styled.section`
 
   code {
     padding: 0 5px 2px;
-    font-size: 0.8em;
     line-height: 1em;
     font-weight: 400 !important;
     /* background: var(--whitegrey); */
@@ -201,7 +196,6 @@ export const PostFullContent = styled.section`
     /* border: ${lighten('-0.1', colors.darkgrey)} 1px solid; */
     /* color: var(--whitegrey); */
     color: ${colors.whitegrey};
-    font-size: 1.4rem;
     line-height: 1.5em;
     /* background: color(var(--darkgrey) l(-3%)); */
     /* background: ${lighten('-0.03', colors.darkgrey)}; */
@@ -215,7 +209,6 @@ export const PostFullContent = styled.section`
 
   pre code {
     padding: 0;
-    font-size: inherit;
     line-height: inherit;
     background: transparent;
   }
@@ -259,63 +252,37 @@ export const PostFullContent = styled.section`
   h6 {
     /* color: color(var(--darkgrey) l(-5%)); */
     color: ${lighten('-0.05', colors.darkgrey)};
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-      'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   h1 {
     margin: 0.5em 0 0.4em;
-    font-size: 3.2rem;
-    line-height: 1.25em;
+    line-height: 1.25;
     font-weight: 600;
   }
   p + h1 {
     margin-top: 0.8em;
   }
-  @media (max-width: 800px) {
-    h1 {
-      font-size: 2.8rem;
-      line-height: 1.25em;
-    }
-  }
 
   h2 {
     margin: 0.5em 0 0.4em;
-    font-size: 2.8rem;
     line-height: 1.25em;
     font-weight: 600;
   }
   p + h2 {
     margin-top: 0.8em;
   }
-  @media (max-width: 800px) {
-    h2 {
-      margin-bottom: 0.3em;
-      font-size: 2.4rem;
-      line-height: 1.25em;
-    }
-  }
 
   h3 {
     margin: 0.5em 0 0.2em;
-    font-size: 2rem;
     line-height: 1.3em;
     font-weight: 600;
   }
   h2 + h3 {
     margin-top: 0.7em;
   }
-  @media (max-width: 800px) {
-    h3 {
-      margin-bottom: 0.3em;
-      font-size: 1.8rem;
-      line-height: 1.3em;
-    }
-  }
 
   h4 {
     margin: 0.5em 0 0.2em;
-    font-size: 2.5rem;
     font-weight: 600;
   }
   h2 + h4 {
@@ -323,13 +290,6 @@ export const PostFullContent = styled.section`
   }
   h3 + h4 {
     margin-top: 0;
-  }
-  @media (max-width: 800px) {
-    h4 {
-      margin-bottom: 0.3em;
-      font-size: 2.4rem;
-      line-height: 1.3em;
-    }
   }
 
   h5 {
@@ -339,8 +299,7 @@ export const PostFullContent = styled.section`
     border: 0;
     /* color: var(--blue); */
     color: ${colors.blue};
-    font-family: Georgia, serif;
-    font-size: 3.2rem;
+    ${fontSize.fz5}
     line-height: 1.35em;
     text-align: center;
   }
@@ -355,21 +314,13 @@ export const PostFullContent = styled.section`
       margin-bottom: 1em;
       margin-left: 1.3em;
       padding: 0 0 0.5em;
-      font-size: 2.4rem;
       text-align: initial;
     }
   }
 
   h6 {
     margin: 0.5em 0 0.2em 0;
-    font-size: 2rem;
     font-weight: 700;
-  }
-  @media (max-width: 800px) {
-    h6 {
-      font-size: 1.8rem;
-      line-height: 1.4em;
-    }
   }
 
   table {
@@ -380,9 +331,6 @@ export const PostFullContent = styled.section`
     width: auto;
     border-spacing: 0;
     border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-      'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
   }
@@ -421,7 +369,6 @@ export const PostFullContent = styled.section`
   table th {
     /* color: var(--darkgrey); */
     color: ${colors.darkgrey};
-    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.2px;
     text-align: left;

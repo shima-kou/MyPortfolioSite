@@ -96,7 +96,7 @@ const ErrorContent = css`
     padding-top: 24vw;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     padding-top: 28vw;
   }
 

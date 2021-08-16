@@ -87,7 +87,6 @@ const SubscribeOverlay = styled.div<SubscribeOverlayProps>`
     height: 52px;
     outline: none;
     color: #fff;
-    font-size: 1.7rem;
     line-height: 38px;
     font-weight: 400;
     text-align: center;
@@ -121,7 +120,6 @@ const SubscribeOverlay = styled.div<SubscribeOverlayProps>`
     width: 100%;
     border: none;
     color: ${colors.midgrey};
-    font-size: 2rem;
     line-height: 1em;
     font-weight: normal;
     letter-spacing: 0.5px;
@@ -132,7 +130,7 @@ const SubscribeOverlay = styled.div<SubscribeOverlayProps>`
     -webkit-appearance: none;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     button {
       margin: 12px 0 0;
     }
@@ -195,7 +193,6 @@ const SubscribeOverlayContent = styled.div`
 const SubscribeOverlayTitle = styled.h1`
   display: inline-block;
   margin: 0 0 10px 0;
-  font-size: 5.2rem;
   line-height: 1.15em;
 `;
 
@@ -203,8 +200,6 @@ const SubscribeOverlayDescription = styled.p`
   margin: 0 auto 50px;
   max-width: 650px;
   color: #fff;
-  ly: Georgia, serif;
-  font-size: 2.4rem;
   line-height: 1.3em;
   font-weight: 300;
   opacity: 0.8;

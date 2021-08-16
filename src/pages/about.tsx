@@ -18,6 +18,7 @@ import {
 } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
+import { fontSize } from '../styles/fontSize';
 
 const PageTemplate = css`
   .site-main {
@@ -28,12 +29,15 @@ const PageTemplate = css`
 
   .post-content {
     h2 {
-      font-size: 2.1rem;
-      line-height: 1.85;
+      font-size: ${fontSize.fz4};
+      line-height: 1.4;
       letter-spacing: 0.08em;
-      color: ${colors.lightgrey};
+      color: ${colors.darkgrey};
       text-align: left;
       margin: 0 0 5rem;
+      @media (prefers-color-scheme: dark) {
+        color: ${colors.whitegrey};
+      }
     }
   }
 
@@ -67,11 +71,21 @@ const About: React.FC = () => (
 
             <PostFullContent className="post-full-content">
               <div className="post-content">
-                <h2>
-                  自身のスキルアップのしたい方向性と近い方向を目指すために現在転職活動中です。
+                <p>
+                  現在はフロントエンドを中心にバックエンド部分もかじっています。
                   <br />
-                  日々の学習内容や詰まった点のメモ用でもあります。
-                </h2>
+                  日々の作業や実装内容や詰まった点のメモなど、そのほか気になった記事についても記事を書いていこうと思っています。
+                  <br />
+                </p>
+                <ul>
+                  <li>
+                    <strong>好きなこと</strong> - 表示の動きの実装
+                  </li>
+                  <li>
+                    <strong>目指したいこと</strong> -
+                    ユーザーが快適に使えるようなアプリやサイトの作れるエンジニア
+                  </li>
+                </ul>
               </div>
             </PostFullContent>
           </article>

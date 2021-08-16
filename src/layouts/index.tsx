@@ -1,12 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Global, css } from '@emotion/react';
-import { lighten } from 'polished';
+import { lighten, size } from 'polished';
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore
 import favicon from '../../src/favicon.ico';
 import { colors } from '../styles/colors';
+import { fontSize } from '../styles/fontSize';
 
 interface IndexProps {
   className?: string;
@@ -105,8 +106,14 @@ const IndexLayout: React.FC<IndexProps> = props => {
             vertical-align: baseline;
           }
           body {
-            font-size: 16px;
+            font-size: ${fontSize.base};
             line-height: 1.5;
+            font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+              'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
+
+            @media (max-width: 768px) {
+              font-size: ${fontSize.baseSm};
+            }
           }
           ol,
           ul {
@@ -132,8 +139,6 @@ const IndexLayout: React.FC<IndexProps> = props => {
           }
           html {
             box-sizing: border-box;
-            font-family: sans-serif;
-
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
           }
@@ -160,15 +165,15 @@ const IndexLayout: React.FC<IndexProps> = props => {
           }
           h1 {
             margin: 0.67em 0;
-            font-size: 2em;
+            font-size: ${fontSize.fz1};
           }
           small {
-            font-size: 80%;
+            font-size: ${fontSize.fz7};
           }
           sub,
           sup {
             position: relative;
-            font-size: 75%;
+            font-size: ${fontSize.fz8};
             line-height: 0;
             vertical-align: baseline;
           }
@@ -192,7 +197,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
           pre,
           samp {
             font-family: monospace, monospace;
-            font-size: 1em;
+            font-size: ${fontSize.fzB};
           }
           button,
           input,
@@ -271,17 +276,11 @@ const IndexLayout: React.FC<IndexProps> = props => {
           html {
             overflow-x: hidden;
             overflow-y: scroll;
-            font-size: 62.5%;
-
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
           }
           body {
             overflow-x: hidden;
             color: ${lighten('-0.3', colors.midgrey)};
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-              Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 1.6rem;
-            line-height: 1.6em;
             font-weight: 400;
             font-style: normal;
             letter-spacing: 0;
@@ -429,33 +428,23 @@ const IndexLayout: React.FC<IndexProps> = props => {
             text-rendering: optimizeLegibility;
           }
 
-          h1 {
-            margin: 0 0 0.5em 0;
-            font-size: 4.2rem;
-            font-weight: 600;
-          }
-          @media (max-width: 500px) {
+          @media (max-width: 768px) {
             h1 {
-              font-size: 2.2rem;
+              font-size: ${fontSize.fz2};
             }
           }
 
           h2 {
             margin: 1.5em 0 0.5em 0;
-            font-size: 2.2rem;
-          }
-          @media (max-width: 500px) {
-            h2 {
-              font-size: 1.8rem;
-            }
+            font-size: ${fontSize.fz2};
           }
 
           h3 {
             margin: 1.5em 0 0.5em 0;
-            font-size: 1.8rem;
+            font-size: ${fontSize.fz3};
             font-weight: 500;
           }
-          @media (max-width: 500px) {
+          @media (max-width: 768px) {
             h3 {
               font-size: 1.7rem;
             }

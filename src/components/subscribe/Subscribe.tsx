@@ -37,13 +37,11 @@ const SubscribeFormSection = styled.section`
     margin-bottom: 0.2em 0 1em;
     /* color: var(--midgrey); */
     color: ${colors.midgrey};
-    font-size: 2.1rem;
     line-height: 1.55em;
   }
 
   @media (max-width: 650px) {
     p {
-      font-size: 1.6rem;
     }
   }
 
@@ -71,12 +69,10 @@ const SubscribeFormTitle = css`
   padding: 0;
   /* color: var(--darkgrey); */
   color: ${colors.darkgrey};
-  font-size: 3.5rem;
   line-height: 1;
   font-weight: 600;
 
   @media (max-width: 650px) {
-    font-size: 2.4rem;
   }
 
   @media (prefers-color-scheme: dark) {

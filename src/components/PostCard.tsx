@@ -9,6 +9,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { colors } from '../styles/colors';
+import { fontSize } from '../styles/fontSize';
 import { PageContext } from '../templates/post';
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
@@ -123,9 +124,9 @@ const PostCardLarge = css`
     }
 
     .post-card-title {
+      font-size: ${fontSize.fz4}
       margin-top: 0;
-      font-size: 2.4rem;
-      line-height: 1.35;
+      line-height: 1.5;
       font-weight: 700;
     }
 
@@ -139,7 +140,6 @@ const PostCardLarge = css`
 
     .post-card-excerpt p {
       margin-bottom: 1.5em;
-      font-size: 1rem;
       line-height: 1.5em;
     }
   }
@@ -167,6 +167,19 @@ const PostCardContent = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  a {
+    h2,
+    p {
+      transition: 0.3s ease;
+    }
+    &:hover {
+      h2,
+      p {
+        transition: 0.3s ease;
+        color: ${colors.blue};
+      }
+    }
+  }
 `;
 
 const PostCardContentLink = css`
@@ -184,17 +197,16 @@ const PostCardPrimaryTag = styled.div`
   margin: 0 0 0.2em;
   /* color: var(--blue); */
   color: ${colors.blue};
-  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.2px;
   text-transform: uppercase;
 `;
 
 const PostCardTitle = styled.h2`
+  font-size: ${fontSize.fz4};
   margin: 0 0 0.4em;
-  line-height: 1.15em;
+  line-height: 1.35em;
   transition: color 0.2s ease-in-out;
-
   @media (prefers-color-scheme: dark) {
     color: rgba(255, 255, 255, 0.85);
   }
@@ -220,7 +232,6 @@ const PostCardBylineContent = styled.div`
   margin: 4px 0 0;
   /* color: color(var(--midgrey) l(+10%)); */
   color: ${lighten('0.1', colors.midgrey)};
-  font-size: 1.2rem;
   line-height: 1.4em;
   font-weight: 400;
   letter-spacing: 0.2px;
@@ -239,7 +250,6 @@ const PostCardBylineContent = styled.div`
   .post-card-primary-tag {
     a {
       color: ${colors.blue};
-      font-size: 1.2rem;
       font-weight: 500;
       letter-spacing: 0.2px;
       text-transform: uppercase;

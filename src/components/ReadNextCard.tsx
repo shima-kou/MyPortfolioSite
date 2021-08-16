@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import * as _ from 'lodash';
 
 import { colors } from '../styles/colors';
+import { fontSize } from '../styles/fontSize';
 import { format } from 'date-fns';
 
 export interface ReadNextProps {
@@ -29,7 +30,9 @@ export interface ReadNextProps {
 
 export const ReadNextCard: React.FC<ReadNextProps> = props => {
   // filter out current post and limit to 3 related posts
-  const relatedPosts = props.relatedPosts.edges.filter(post => post.node.fields.slug !== props.currentPageSlug).slice(0, 3);
+  const relatedPosts = props.relatedPosts.edges
+    .filter(post => post.node.fields.slug !== props.currentPageSlug)
+    .slice(0, 3);
 
   return (
     <ReadNextCardArticle className="read-next-card">
@@ -116,7 +119,6 @@ const ReadNextCardArticle = styled.article`
 const ReadNextCardHeaderTitle = styled.h3`
   margin: 0;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 1.2rem;
   line-height: 1em;
   font-weight: 300;
   letter-spacing: 0.4px;
@@ -135,8 +137,6 @@ const ReadNextCardHeaderTitle = styled.h3`
 `;
 
 const ReadNextCardContent = styled.div`
-  font-size: 1.7rem;
-
   ul {
     display: flex;
     flex-direction: column;
@@ -161,7 +161,6 @@ const ReadNextCardContent = styled.div`
 
   h4 {
     margin: 0;
-    font-size: 1.6rem;
     line-height: 1.35em;
     font-weight: 600;
   }
@@ -179,7 +178,6 @@ const ReadNextCardContent = styled.div`
 
 const ReadNextCardMeta = styled.div`
   margin-top: 2px;
-  font-size: 1.2rem;
   line-height: 1.4em;
   font-weight: 400;
 
@@ -197,7 +195,6 @@ const ReadNextCardFooter = styled.footer`
     padding: 7px 12px 8px 14px;
     border: 1px solid rgba(255, 255, 255, 0.6);
     color: rgba(255, 255, 255, 0.6);
-    font-size: 1.3rem;
     border-radius: 999px;
     transition: all 0.35s ease-in-out;
   }
