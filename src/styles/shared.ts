@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { colors } from './colors';
+import { fontSize } from './fontSize';
 
 export const outer = css`
   position: relative;
@@ -46,26 +47,22 @@ export const SiteTitle = styled.h1`
   z-index: 10;
   margin: 0 0 0 -2px;
   padding: 0;
-  font-size: 5rem;
+  font-size: ${fontSize.fz1};
   line-height: 1em;
   font-weight: 600;
-
-  @media (max-width: 500px) {
-    font-size: 4.2rem;
-  }
 `;
 
 export const SiteDescription = styled.h2`
   z-index: 10;
   margin: 0;
   padding: 5px 0;
-  font-size: 2.1rem;
+  font-size: ${fontSize.fz4};
   line-height: 1.4em;
   font-weight: 500;
   opacity: 0.8;
   color: ${colors.darkgrey};
-  @media (max-width: 500px) {
-    font-size: 1.8rem;
+  @media (max-width: 768px) {
+    font-size: ${fontSize.fz5};
   }
 `;
 
@@ -296,7 +293,7 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
     padding-bottom: 20px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     .site-header-content {
       flex-direction: column;
       align-items: center;
@@ -304,7 +301,7 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
     }
 
     .site-title {
-      font-size: 4.2rem;
+      font-size: ${fontSize.fz1};
       text-align: center;
     }
 
@@ -381,7 +378,7 @@ export const NoImage = css`
     color: ${colors.midgrey};
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     .site-header-content {
       flex-direction: column;
       align-items: center;
@@ -389,7 +386,7 @@ export const NoImage = css`
     }
 
     .site-title {
-      font-size: 4.2rem;
+      font-size: ${fontSize.fz1};
       text-align: center;
     }
 

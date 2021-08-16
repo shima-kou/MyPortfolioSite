@@ -6,6 +6,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';
+import { fontSize } from '../../styles/fontSize';
 import { SocialLink, SocialLinkFb } from '../../styles/shared';
 import config from '../../website-config';
 import { Twitter } from '../icons/twitter';
@@ -181,7 +182,6 @@ const SiteNavStyles = css`
   align-items: flex-start;
   overflow-y: hidden;
   height: 64px;
-  font-size: 1.3rem;
 `;
 
 const SiteNavLeft = styled.div`
@@ -303,7 +303,6 @@ const NavPostTitle = styled.span`
   position: absolute;
   top: 9px;
   color: #fff;
-  font-size: 1.7rem;
   font-weight: 400;
   text-transform: none;
   opacity: 0;

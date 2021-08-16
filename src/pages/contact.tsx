@@ -48,8 +48,10 @@ const textInput = css`
       background-color: rgba(214, 214, 214, 0.2);
     }
     label {
-      color: #fff;
-      font-size: 1.15rem;
+      color: ${colors.darkgrey};
+      @media (prefers-color-scheme: dark) {
+        color: ${colors.white};
+      }
     }
     input {
       max-width: 100%;

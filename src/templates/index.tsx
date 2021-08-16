@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 
 import { css } from '@emotion/react';
 import { colors } from '../styles/colors';
+import { fontSize } from '../styles/fontSize';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
@@ -116,6 +117,7 @@ const IndexPage: React.FC<IndexProps> = props => {
             <SiteHeaderContent className="site-header-content" css={[ResponsiveHeaderBackground]}>
               <h1 css={[MainTitle]}>{config.title}</h1>
               <p>Web Engineer</p>
+
               <SiteDescription style={{ color: colors.whitegrey, opacity: '1' }}>
                 {config.description}
               </SiteDescription>
@@ -219,11 +221,15 @@ export const pageQuery = graphql`
 `;
 
 const MainTitle = css`
+  font-size: 2.45rem;
   color: ${colors.yellow};
   margin: 0 0 10px;
   & + p {
     font-weight: 700;
     color: ${colors.whitegrey};
+  }
+  @media (max-width: 768px) {
+    font-size: 2rem;
   }
 `;
 
@@ -239,7 +245,7 @@ const HomePosts = css`
 
     .post-card-large .post-card-title {
       margin-top: 0;
-      font-size: 2.4rem;
+      font-size: ${fontSize.fz4};
     }
 
     .post-card-large:not(.no-image) .post-card-header {
@@ -297,7 +303,7 @@ const HomePosts = css`
 
     .post-card-large .post-card-title {
       margin-top: 0;
-      font-size: 2.4rem;
+      font-size: ${fontSize.fz4};
     }
 
     .post-card-large .post-card-content-link {
@@ -310,7 +316,7 @@ const HomePosts = css`
 
     .post-card-large .post-card-excerpt p {
       margin-bottom: 1.5em;
-      font-size: 1.8rem;
+      font-size: ${fontSize.fzB};
       line-height: 1.5em;
     }
   }
@@ -319,7 +325,6 @@ const HomePosts = css`
     transition: 0.3s ease;
     &:hover {
       text-decoration: none;
-      color: #39a0ed;
       transition: 0.3s ease;
     }
   }

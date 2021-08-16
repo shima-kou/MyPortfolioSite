@@ -17,6 +17,7 @@ import { Subscribe } from '../components/subscribe/Subscribe';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
+import { fontSize } from '../styles/fontSize';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
 
@@ -276,7 +277,7 @@ export const PostFullHeader = styled.header`
     padding-left: 5vw;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     padding: 20px 0 35px;
   }
 `;
@@ -287,7 +288,6 @@ const PostFullTags = styled.section`
   align-items: center;
   /* color: var(--midgrey); */
   color: ${colors.midgrey};
-  font-size: 1.3rem;
   line-height: 1.4em;
   font-weight: 600;
   text-transform: uppercase;
@@ -297,12 +297,10 @@ const PostFullTags = styled.section`
 const PostFullCustomExcerpt = styled.p`
   margin: 20px 0 0;
   color: var(--midgrey);
-  font-size: 2.3rem;
   line-height: 1.4em;
   font-weight: 300;
 
-  @media (max-width: 500px) {
-    font-size: 1.9rem;
+  @media (max-width: 768px) {
     line-height: 1.5em;
   }
 
@@ -335,7 +333,6 @@ const PostFullByline = styled.div`
     margin: 2px 0 0;
     /* color: color(var(--midgrey) l(+10%)); */
     color: ${lighten('0.1', colors.midgrey)};
-    font-size: 1.2rem;
     line-height: 1.2em;
     letter-spacing: 0.2px;
     text-transform: uppercase;
@@ -343,7 +340,6 @@ const PostFullByline = styled.div`
 
   .post-full-byline-meta h4 {
     margin: 0 0 3px;
-    font-size: 1.3rem;
     line-height: 1.4em;
     font-weight: 500;
   }
@@ -381,9 +377,8 @@ const PostFullByline = styled.div`
 export const PostFullTitle = styled.h1`
   margin: 0 0 0.2em;
   color: ${setLightness('0.05', colors.darkgrey)};
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     margin-top: 0.2em;
-    font-size: 3.3rem;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -409,7 +404,7 @@ const PostFullImage = styled.figure`
   @media (max-width: 800px) {
     height: 400px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     margin-bottom: 4vw;
     height: 350px;
   }

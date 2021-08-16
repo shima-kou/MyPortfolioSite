@@ -47,7 +47,7 @@ const SubscribeFormStyles = css`
   margin: 0 auto;
   max-width: 460px;
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     flex-direction: column;
 
     .form-group {
@@ -65,7 +65,6 @@ const SubscribeEmail = styled.input`
   border: ${lighten('0.07', colors.lightgrey)} 1px solid;
   /* color: var(--midgrey); */
   color: ${colors.midgrey};
-  font-size: 1.8rem;
   line-height: 1em;
   font-weight: normal;
   user-select: text;
@@ -102,7 +101,6 @@ const SubscribeFormButton = styled.button`
   height: 43px;
   outline: none;
   color: #fff;
-  font-size: 1.5rem;
   line-height: 39px;
   font-weight: 400;
   text-align: center;
@@ -128,7 +126,7 @@ const SubscribeFormButton = styled.button`
     /* background: color(var(--blue) lightness(-9%) saturation(-10%)); */
     background: ${saturate('-0.1', lighten('-0.09', colors.blue))};
   }
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     margin: 10px 0 0 0;
     width: 100%;
   }
@@ -139,8 +137,7 @@ const SubscribeFormButton = styled.button`
 `;
 
 const FormGroup = styled.div`
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;
-

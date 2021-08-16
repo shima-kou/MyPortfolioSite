@@ -3,6 +3,7 @@ import React from 'react';
 import { css } from '@emotion/react';
 import { outer, ProfileMain } from '../styles/shared';
 import { colors } from '../styles/colors';
+import { fontSize } from '../styles/fontSize';
 
 export const SkillCard: React.FC = () => {
   return (
@@ -58,13 +59,11 @@ export const SkillCard: React.FC = () => {
 };
 
 const SectionTitle = css`
-  font-size: 5.5rem;
   font-weight: 600;
   margin: 0 20px 30px;
   color: ${colors.darkgrey};
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     margin-top: 0.2em;
-    font-size: 3.3rem;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -106,10 +105,10 @@ const SkillCardColumn = css`
     height: 100%;
     border-radius: 5px;
     @media (max-width: 767px) {
-      padding: 5px 10px 10px;
+      padding: 18px 20px 10px;
     }
     h3 {
-      font-size: 20px;
+      font-size: ${fontSize.fz5};
       line-height: 1.3;
       font-weight: 700;
       color: ${colors.whitegrey};
@@ -117,6 +116,7 @@ const SkillCardColumn = css`
       padding: 25px 0 14px;
       margin: 0;
       @media (max-width: 767px) {
+        font-size: ${fontSize.fz6};
         padding: 0 0 10px;
         line-height: 1.35;
       }

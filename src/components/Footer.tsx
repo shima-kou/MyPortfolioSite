@@ -7,6 +7,7 @@ import { css } from '@emotion/react';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import { colors } from '../styles/colors';
+import { fontSize } from '../styles/fontSize';
 import { outer, inner } from '../styles/shared';
 import config from '../website-config';
 
@@ -51,7 +52,6 @@ const SiteFooterContent = css`
   justify-content: space-between;
   align-items: center;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1.3rem;
   a {
     color: rgba(255, 255, 255, 0.7);
   }
