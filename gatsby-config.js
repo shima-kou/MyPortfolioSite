@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: 'K.S Daily Coding',
     description: 'フロントエンドとバックエンド、たまにデザインをやる雑多エンジニアのブログです。',
-    siteUrl: 'https://kakonaru-portfolio.gi.app',
+    siteUrl: 'https://kakonaru-portfolio.netlify.app',
   },
   mapping: {},
   plugins: [
