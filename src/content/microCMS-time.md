@@ -2,7 +2,7 @@
 title: 'microCMSのAPIから返ってきた日付がズレる'
 tags: [GatsbyJS, microCMS, memorandum]
 image: img/soucecodeIMGL9025_TP_V.jpg
-date: '2021-08-11T10:00:00.000Z'
+date: '2021-08-23T10:00:00.000Z'
 draft: false
 excerpt: microCMSのAPIから返却されてきた日付をそのまま表示させていたら日付がズレていたのでその修正を行なったのと備忘録。
 ---
