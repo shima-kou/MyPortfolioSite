@@ -1,6 +1,6 @@
 ---
 title: 'microCMSのAPIから返ってきた日付がズレる'
-tags: [GatsbyJS, microCMS, memorandum]
+tags: [microCMS]
 image: img/soucecodeIMGL9025_TP_V.jpg
 date: '2021-08-23T10:00:00.000Z'
 draft: false
